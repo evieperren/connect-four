@@ -1,13 +1,15 @@
 let playGame = document.getElementById('button');
 let gameSection = document.querySelector('.game');
-let dropCounters = document.querySelectorAll('.drop-counters-spaces');
+let dropCounters = document.querySelectorAll('.drop-counters__spaces');
 
 let game = {
     isDisplayed: false
 }
 for (i = 0; i < dropCounters.length; i++) {
-    dropCounters[i].setAttribute('id', i)
-    dropCounters[i].addEventListener('click', showCounter)
+    dropCounters[i].addEventListener('mouseover',  function showCounter() {
+        console.log('show counter');
+        console.log(dropCounters) // undefined 
+    })
 }
 
 function createTable() {
@@ -25,29 +27,16 @@ function createTable() {
     }
 }
 
-// function createButton(){
-//     if(game.isDisplayed){
-//         let restartButton = createElement('button');
-//         restartButton.setAttribute('class', 'game__button');
-//         restartButton.innerHTML = 'Restart';
-//         gameSection.appendChild(restartButton);
-//         return restartButton;
-//     }
-// }
-// state for button 
 function showGame(e) {
     e.preventDefault();
     game.isDisplayed = true;
     createTable()
-    createButton();
-}
-
-function showCounter() {
-    console.log('show counter');
+    //createButton();
 }
 
 // events
 playGame.addEventListener('click', showGame);
+
 //dropCounters.addEventListener('click', showCounter)
 // restartButton.addEventListener('click', restartGame)
 // activate column 2, disable columns 1-9 
