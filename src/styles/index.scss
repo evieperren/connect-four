@@ -1,3 +1,47 @@
-.title {
-    color: red;
+@import "../base/typography";
+
+body {
+    font-family: $font-family;
+}
+.title, h2, p {
+    text-align: center;
+}
+.game {
+    text-align: center;
+
+    &__board {
+        border: 1px solid black;
+        width: 305px;
+        margin: 0 auto;
+
+        &__row {
+            border: 1px solid black;
+        }
+    }
+    &__button {
+        border: 1px solid transparent;
+        background-color: pink;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+}
+.drop-counters{
+
+    &__spaces {
+        background-color: red;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+
+        &:hover {
+            background-image: url('../assets/circle-regular.svg');
+        }
+    }
+}
+
+
+.rows {
+    background-color: red;
+    height: 40px;
 }

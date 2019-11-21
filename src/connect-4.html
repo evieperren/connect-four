@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,85 @@
     <link rel="stylesheet" href="./connect-4.css">
     <title>Connect 4</title>
 </head>
+
 <body>
     <h1 class="title">Connect 4</h1>
-    <section class="rules"> 
+    <section class="rules">
         <h2 class="rules__title">Rules of the game</h2>
-        <p class="rules__information">The aim of the game is complete 4 matching colours into a row. This row can be diagonal, vertical or horizontal. Each player will drop in one checker piece at a time.</p>
+        <p class="rules__information">The aim of the game is complete 4 matching colours into a row. This row can be
+            diagonal, vertical or horizontal. Each player will drop in one checker piece at a time.</p>
     </section>
-    <section class="game-section">
+    <section class="game">
+        <button class="game__button" id="button">Play game</button>
+        <div class="drop-counters">
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+            <div class="drop-counters__spaces"></div>
+        </div>
+        <div class="game__board">
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+            <div class="rows">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
 
+
+        </div>
     </section>
     <script src="connect-4.js"></script>
 </body>
+
 </html>
