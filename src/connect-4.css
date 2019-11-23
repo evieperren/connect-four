@@ -10,14 +10,23 @@ body {
     border: 1px solid black;
     width: 305px;
     margin: 0 auto; }
-    .game__board__row {
-      border: 1px solid black; }
+    .game__board__rows {
+      border: 1px solid black;
+      background-color: red;
+      height: 40px; }
+    .game__board__spaces {
+      width: 37px;
+      display: inline-block;
+      height: 100%;
+      background-color: blue; }
   .game__button {
     border: 1px solid transparent;
     background-color: pink;
     border-radius: 10px;
     padding: 5px;
     margin-bottom: 20px; }
+    .game__button--hide {
+      display: none; }
 
 .drop-counters__spaces {
   background-color: red;
@@ -25,6 +34,6 @@ body {
   height: 40px;
   display: inline-block; }
 
-.rows {
-  background-color: red;
-  height: 40px; }
+.drop-counters--counters {
+  background-image: url("../assets/circle-solid.svg");
+  background-color: pink; }

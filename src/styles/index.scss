@@ -14,8 +14,16 @@ body {
         width: 305px;
         margin: 0 auto;
 
-        &__row {
+        &__rows {
             border: 1px solid black;
+            background-color: red;
+            height: 40px;
+        }
+        &__spaces {
+            width: 37px;
+            display: inline-block;
+            height: 100%;
+            background-color: blue;
         }
     }
     &__button {
@@ -24,6 +32,10 @@ body {
         border-radius: 10px;
         padding: 5px;
         margin-bottom: 20px;
+
+        &--hide {
+            display: none;
+        }
     }
 }
 .drop-counters{
@@ -34,10 +46,9 @@ body {
         height: 40px;
         display: inline-block;
     }
+    &--counters {
+        background-image: url('../assets/circle-solid.svg');
+        background-color: pink;
+    }
 }
 
-
-.rows {
-    background-color: red;
-    height: 40px;
-}
