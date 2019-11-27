@@ -1,33 +1,67 @@
-let playGame = document.getElementById('button');
-let gameSection = document.querySelector('.game');
-// let dropCounters = document.querySelectorAll('.drop-counters__spaces');
+const playGame = document.getElementById('button');
+const gameSection = document.querySelector('.game');
 
-let game = {
+const game = {
     isDisplayed: false,
     No_counters: 0,
 }
+const columns = {
+    col0: document.getElementsByClassName('column:0'),
+    col1: document.getElementsByClassName('column:1'),
+    col2: document.getElementsByClassName('column:2'),
+    col3: document.getElementsByClassName('column:3'),
+    col4: document.getElementsByClassName('column:4'),
+    col5: document.getElementsByClassName('column:5'),
+    col6: document.getElementsByClassName('column:6'),
+    col7: document.getElementsByClassName('column:7')
+}
 
 function createDropCounters (){
-    let dropCounters = document.createElement('div');
+    const dropCounters = document.createElement('div');
     dropCounters.setAttribute('class', 'drop-counters');
     gameSection.appendChild(dropCounters);
     
     for(i = 0; i <= 7; i++){
-        let dropCountersSpaces = document.createElement('div');
-        dropCountersSpaces.setAttribute('class', 'drop-counters__spaces');
+        const dropCountersSpaces = document.createElement('div');
+        dropCountersSpaces.setAttribute('class', `drop-counters__spaces`);
+        dropCountersSpaces.setAttribute('id', `counter--${i}`)
         dropCounters.appendChild(dropCountersSpaces);
     
-        dropCountersSpaces.addEventListener('mouseover', function(){
-            event.target.style.background = 'pink';
-        })
-        dropCountersSpaces.addEventListener('mouseout', function(){
-            event.target.style.background = ''
-        })
-        dropCountersSpaces.addEventListener('click', function(){
-            event.target.style.background = 'purple'
-            this.onmouseout = null;
-        })
+        if(game.No_counters !== 1){
+            dropCountersSpaces.addEventListener('click', function(e) {
+                e.target.setAttribute('class', 'drop-counters--selected')
+                game.No_counters += 1;
 
+                switch(e.target.id){
+                    case 'counter--0':
+                        columns.col0[6].setAttribute('class', 'dropped-counter')
+                        break;
+                    case 'counter--1':
+                        columns.col1[6].setAttribute('class', 'dropped-counter')
+                        break;
+                    case 'counter--2':
+                        columns.col2[6].setAttribute('class', 'dropped-counter')
+                        break;
+                    case 'counter--3':
+                        columns.col3[6].setAttribute('class', 'dropped-counter')
+                        break;
+                    case 'counter--4':
+                        columns.col4[6].setAttribute('class', 'dropped-counter')
+                        break;
+                    case 'counter--5':
+                        columns.col5[6].setAttribute('class', 'dropped-counter')
+                        break; 
+                    case 'counter--6':
+                        columns.col6[6].setAttribute('class', 'dropped-counter')
+                        break; 
+                    case 'counter--7':
+                        columns.col7[6].setAttribute('class', 'dropped-counter')
+                        break;
+                }
+            })
+        } else {
+            return
+        }
     }
 }
 
@@ -35,20 +69,19 @@ function createTable() {
     if (game.isDisplayed) {
         createDropCounters()
 
-        let board = document.createElement('div');
+        const board = document.createElement('div');
         board.setAttribute('class', 'game__board');
         gameSection.appendChild(board);
 
         for (i = 1; i <= 7; i++) {
-            let row = document.createElement('div');
-            row.setAttribute('class', `game__board__rows`);
-            row.setAttribute('id', i)
+            const row = document.createElement('div');
+            row.setAttribute('class', `game__board__rows row:${i}`);
             board.appendChild(row);
 
             for(k = 0; k<=7; k++){
-                let spaces = document.createElement('div');
-                spaces.setAttribute('class', 'game__board__spaces');
-                spaces.setAttribute('id', k)
+                const spaces = document.createElement('div');
+                spaces.setAttribute('class', `game__board__spaces column:${k}`);
+
                 row.appendChild(spaces);
             }
         }
@@ -56,7 +89,7 @@ function createTable() {
     }
 }
 function restartButton(){
-    let restart = document.createElement('button');
+    const restart = document.createElement('button');
     restart.setAttribute('class', 'game__button');
     restart.innerHTML = 'Restart Game';
     gameSection.appendChild(restart);
