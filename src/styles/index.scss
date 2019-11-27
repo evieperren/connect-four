@@ -15,14 +15,12 @@ body {
         margin: 0 auto;
 
         &__rows {
-            border: 1px solid black;
             height: 40px;
         }
         &__spaces {
             width: 37px;
             display: inline-block;
             height: 100%;
-            background-color: blue;
 
             &--selected {
                 background-color: green;

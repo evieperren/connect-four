@@ -11,13 +11,11 @@ body {
     width: 305px;
     margin: 0 auto; }
     .game__board__rows {
-      border: 1px solid black;
       height: 40px; }
     .game__board__spaces, .dropped-counter {
       width: 37px;
       display: inline-block;
-      height: 100%;
-      background-color: blue; }
+      height: 100%; }
       .game__board__spaces--selected {
         background-color: green; }
   .game__button {
