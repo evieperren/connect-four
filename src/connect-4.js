@@ -14,6 +14,16 @@ const columns = {
     col6: document.getElementsByClassName('column:6'),
     col7: document.getElementsByClassName('column:7')
 }
+const rows = {
+    row0: [0, 0, 0, 0, 0, 0, 0, 0],
+    row1: [0, 0, 0, 0, 0, 0, 0, 0],
+    row2: [0, 0, 0, 0, 0, 0, 0, 0],
+    row3: [0, 0, 0, 0, 0, 0, 0, 0],
+    row4: [0, 0, 0, 0, 0, 0, 0, 0],
+    row5: [0, 0, 0, 0, 0, 0, 0, 0],
+    row6: [0, 0, 0, 0, 0, 0, 0, 0],
+    row7: [0, 0, 0, 0, 0, 0, 0, 0] 
+}
 playGame.addEventListener('click', showGame);
 
 function showGame(e) {
@@ -34,7 +44,7 @@ function createTable() {
         board.setAttribute('class', 'game__board');
         gameSection.appendChild(board);
 
-        for (i = 1; i <= 7; i++) {
+        for (i = 7; i >=0; i--) {
             const row = document.createElement('div');
             row.setAttribute('class', `game__board__rows row:${i}`);
             board.appendChild(row);
@@ -64,34 +74,88 @@ function createDropCounters (){
             dropCountersSpaces.addEventListener('click', function(e) {
                 game.No_counters += 1;
                 
-                for(c = 7; c > i; c--){
-                    console.log(c);
-                }
                 switch(e.target.id){
                     case 'counter--0':
-                        columns.col0[6].setAttribute('class', 'dropped-counter');
+                        columns.col0[7].setAttribute('class', 'dropped-counter');
                         
+                        rows.row0[0] = 1
+                        console.log(columns.col0[6]);
+                        console.log(columns.col0[5]);
+                        e.target.addEventListener('click', function (){
+                            if(rows.row0[0] === 1){
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                     case 'counter--1':
-                        columns.col1[6].setAttribute('class', 'dropped-counter')
+                        columns.col1[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[1] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[1] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                     case 'counter--2':
-                        columns.col2[6].setAttribute('class', 'dropped-counter')
+                        columns.col2[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[2] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[2] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                     case 'counter--3':
-                        columns.col3[6].setAttribute('class', 'dropped-counter')
+                        columns.col3[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[3] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[3] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                     case 'counter--4':
-                        columns.col4[6].setAttribute('class', 'dropped-counter')
+                        columns.col4[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[4] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[4] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                     case 'counter--5':
-                        columns.col5[6].setAttribute('class', 'dropped-counter')
+                        columns.col5[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[5] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[5] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break; 
                     case 'counter--6':
-                        columns.col6[6].setAttribute('class', 'dropped-counter')
+                        columns.col6[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[6] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[6] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break; 
                     case 'counter--7':
-                        columns.col7[6].setAttribute('class', 'dropped-counter')
+                        columns.col7[7].setAttribute('class', 'dropped-counter');
+                        rows.row0[7] = 1
+                        console.log(rows.row0);
+                        e.target.addEventListener('click', function () {
+                            if (rows.row0[7] === 1) {
+                                columns.col0[6].setAttribute('class', 'dropped-counter');
+                            }
+                        })
                         break;
                 }
             })
