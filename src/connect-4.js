@@ -26,22 +26,25 @@ const rows = [
     [11, 1, 1, 1, 0, 0, 1, 1]
 ]
 let tally = 0
-// function checkWinner(){
-    for (let r = 0; r < rows.length; r++){
+
+for (let r = 0; r < rows.length; r++){
         
-        for(let i = 0; i < rows.length; i++){
-            // check values across
-            console.log(rows[r][i]) // compares against 18
-            
-            if(rows[r][i] === rows[r][i-1]){
-                console.log('match of 2')
-    
-            }
-            // check values down
-           
+    for(let i = 0; i < rows.length; i++){
+        // check values across
+         console.log(rows[r][i]) // compares against 18
+
+        
+        if (rows[r][i] === rows[r][i + 1] && rows[r][i + 1] === rows[r][i + 2] && rows[r][i + 2]=== rows[r][i+3]){
+            console.log('match of 4 across')
+
         }
+        // check values down
+        //    if(rows[i][r] === rows[i][r-1]){
+        //        console.log('match of 2 down')
+        //    }
+        // }
     }
-// }
+}
 
 const player = {
     one: true,
