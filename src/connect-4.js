@@ -16,7 +16,7 @@ const columns = {
     col7: document.getElementsByClassName('column:7')
 }
 const rows = [
-    [18, 98, 10, 58, 78, 38, 28, 88],
+    [18, 18, 10, 58, 78, 38, 28, 88],
     [7, 5, 0, 0, 0, 0, 0, 0],
     [6, 6, 0, 0, 0, 0, 0, 0],
     [5, 5, 0, 0, 0, 0, 0, 5],
@@ -26,75 +26,23 @@ const rows = [
     [11, 1, 1, 1, 0, 0, 1, 1]
 ]
 let tally = 0
-for (let i = 0; i <= rows.length; i++) {
-    // console.log(rows.length)
-
-    for (let c = 0; c < rows.length; c++){
-        console.log(rows[c][i]) // checks from top to bottom
+// function checkWinner(){
+    for (let r = 0; r < rows.length; r++){
         
-        // check columns 
-        if (rows[c][i] === rows[c][i-1]){
-            console.log(' its a match')
+        for(let i = 0; i < rows.length; i++){
+            // check values across
+            console.log(rows[r][i]) // compares against 18
+            
+            if(rows[r][i] === rows[r][i-1]){
+                console.log('match of 2')
+    
+            }
+            // check values down
+           
         }
-       
     }
-    function checkValues () {
-        // check row 
-        // if(rows[i-1][0] === rows[i-1][1]){
-        //     console.log('match')
-        //     tally++
-        //     console.log(`Tally = ${tally}`)
-        
-        //     if (rows[i - 1][1] === rows[i - 1][2]){
-        //         console.log('match')
-        //         tally++
-        //         console.log(`Tally = ${tally}`) 
-        
-        //         if (rows[i - 1][2] === rows[i - 1][3]){
-        //             console.log('match')
-        //             tally++
-        //             console.log(`Tally = ${tally}`) 
-        
-        //             if(tally >= 3){
-        //                 console.log('Winner')
-        //                 return 'Winner'
-        //             }
-        //             if (rows[i - 1][3] === rows[i - 1][4]) {
-        //                 console.log('match')
-        //                 if(tally >= 3) {
-        //                     console.log('Winner')
-        //                     tally++
-        //                     return tally
-        //                 }
-        
-        //                 if (rows[i - 1][4] === rows[i - 1][5]){
-        //                     console.log('match')
-        //                     if (tally >= 3) {
-        //                         console.log('Winner')
-        //                         tally++
-        //                     }
-        //                     // console.log(`Tally = ${tally}`)
-        
-        //                     if (rows[i - 1][5] === rows[i - 1][6]) {
-        //                         console.log('match')
-        //                         tally++
-        //                         console.log(`Tally = ${tally}`)
-        
-        //                         if (rows[i - 1][6] === rows[i - 1][7]) {
-        //                             console.log('match')
-        //                             tally++
-        //                             console.log(`Tally = ${tally}`)
-        
-        //                         } 
-        //                     } 
-        //                 }
-        //             } 
-        //         } 
-        //     } 
-        // } 
-    } 
-    // checkValues()
-    }
+// }
+
 const player = {
     one: true,
     two: false
