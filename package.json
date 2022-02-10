@@ -19,6 +19,6 @@
   "homepage": "https://github.com/eviebutland/connect-4#readme",
   "dependencies": {
     "node": "^13.1.0",
-    "node-sass": "^4.13.0"
+    "node-sass": "^7.0.0"
   }
 }
